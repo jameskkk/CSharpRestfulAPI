@@ -11,10 +11,10 @@ namespace RestFulClient
     {
         static void Main(string[] args)
         {
-            Console.Title = "Restful客戶端Demo測試";
+            Console.Title = "Restful Client端Demo測試";
 
             RestClient client = new RestClient();
-            client.EndPoint = @"http://127.0.0.1:7788/";
+            client.EndPoint = @"http://127.0.0.1:8080/";
 
             client.Method = EnumHttpVerb.GET;
             string resultGet = client.HttpRequest("PersonInfoQuery/王二麻子");

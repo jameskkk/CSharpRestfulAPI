@@ -19,6 +19,7 @@ namespace RestFulService
     public class PersonInfoQueryServices : IPersonInfoQuery
     {
         private List<User> UserList = new List<User>();
+
         /// <summary>
         /// 生成一些測試數據
         /// </summary>
@@ -26,8 +27,9 @@ namespace RestFulService
         {
             UserList.Add(new User() { ID = 1, Name = "張三", Age = 18, Score = 98 });
             UserList.Add(new User() { ID = 2, Name = "李四", Age = 20, Score = 80 });
-            UserList.Add(new User() { ID = 3, Name = "王二麻子", Age = 25, Score = 59 });
+            UserList.Add(new User() { ID = 3, Name = "John", Age = 25, Score = 100 });
         }
+
         /// <summary>
         /// 實現GetScore方法，返回某人的成績
         /// </summary>
@@ -37,6 +39,7 @@ namespace RestFulService
         {
             return UserList.FirstOrDefault(n => n.Name == name);
         }
+
         /// <summary>
         /// 實現GetInfo方法，返回某人的User信息
         /// </summary>
@@ -46,6 +49,5 @@ namespace RestFulService
         {
             return UserList.FirstOrDefault(n => n.ID == info.ID && n.Name == info.Name);
         }
-
     }
 }

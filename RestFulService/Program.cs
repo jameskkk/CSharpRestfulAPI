@@ -13,10 +13,12 @@ namespace RestFulService
         {
             try
             {
-                Console.Title = "Restful服務端測試";
+                Console.Title = "RestfulServer端測試";
                 PersonInfoQueryServices service = new PersonInfoQueryServices();
-                WebServiceHost _serviceHost = new WebServiceHost(service, new Uri("http://127.0.0.1:7788/"));
-                //或者第二種方法：WebServiceHost _serviceHost = new WebServiceHost(typeof(PersonInfoQueryServices), new Uri("http://127.0.0.1:7788/"));
+                //WebServiceHost _serviceHost = new WebServiceHost(service, new Uri("http://127.0.0.1:8081/"));
+                //或者第二種方法
+                WebServiceHost _serviceHost = new WebServiceHost(typeof(PersonInfoQueryServices), new Uri("http://127.0.0.1:8081/"));
+
                 _serviceHost.Open();
                 Console.WriteLine("Web服務已開啟...");
                 Console.WriteLine("輸入任意鍵關閉程序！");
