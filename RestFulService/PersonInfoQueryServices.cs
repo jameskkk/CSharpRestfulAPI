@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 /************************************************************************************
@@ -37,6 +38,8 @@ namespace RestFulService
         /// <returns></returns>
         public User GetScore(string name)
         {
+            Thread.Sleep(RestFulService.Properties.Settings.Default.DelayTime * 1000);
+            Console.WriteLine("DelayTime: " + RestFulService.Properties.Settings.Default.DelayTime.ToString() + "s");
             return UserList.FirstOrDefault(n => n.Name == name);
         }
 
@@ -47,6 +50,8 @@ namespace RestFulService
         /// <returns></returns>
         public User GetInfo(Info info)
         {
+            Thread.Sleep(RestFulService.Properties.Settings.Default.DelayTime * 1000);
+            Console.WriteLine("DelayTime: " + RestFulService.Properties.Settings.Default.DelayTime.ToString() + "s");
             return UserList.FirstOrDefault(n => n.ID == info.ID && n.Name == info.Name);
         }
     }

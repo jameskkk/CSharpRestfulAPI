@@ -26,6 +26,7 @@ namespace RestFulService
             if (this.DialogResult == DialogResult.OK)
             {
                 RestFulService.Properties.Settings.Default.ShowMessage = showMessageCheckBox.Checked;
+                RestFulService.Properties.Settings.Default.DelayTime = (int)numericUpDownDelay.Value;
                 RestFulService.Properties.Settings.Default.Save();
             }
         }
